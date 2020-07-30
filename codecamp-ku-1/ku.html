@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <title>随机引用生成器</title>
+        <script>
+            const quotebank=[
+                {
+                    quote:"哀其不幸，怒其不争",
+                    author:"鲁迅"
+                },
+                {
+                    quote:"长太息以掩涕兮，哀民生之多艰",
+                    author:"屈原"
+                },{
+                    quote:"千里之行，始于足下",
+                    author:"老子"
+                }
+            ];
+            window.onload=init;
+            function init(){
+                generateQuote()
+            }
+            function generateQuote(){
+                let quoteSize=quotebank.length;
+                let randomIndex=Math.floor(Math.random()*quoteSize);
+                let randomQuoteData=quotebank[randomIndex];
+                let twitterLink="https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=%22In%20order%20to%20succeed%2C%20your%20desire%20for%20success%20should%20be%20greater%20than%20your%20fear%20of%20failure.%22%20Bill%20Cosby"
+                document.getElementById("text").innerText=randomQuoteData.quote;
+                document.getElementById("author").innerText=randomQuoteData.author;
+            }
+        </script>
+        
+    </head>
+    <body>
+        <div class="container">
+        <div class="row py-4">
+        <div class="col-md-8 offset-md-2">
+        <wrapper id="box">
+            <div class="card">
+                <div class="card-header text-center">随机引用生成器</div>
+                <div class="card-body">
+                  <h5 class="card-title"><div id="text"></div></h5>
+                  <p class="card-text"><div id="author"></div></p>
+                  <button id="new-quote" onClick="generateQuote();" class="btn btn-success btn-block">新引用</button>
+                  <a href="https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=%22In%20order%20to%20succeed%2C%20your%20desire%20for%20success%20should%20be%20greater%20than%20your%20fear%20of%20failure.%22%20Bill%20Cosby" id="tweet" target="_blank" class="btn btn-primary btn-block">发到推特</a>
+                </div>
+              </div>
+            
+            
+            
+        </wrapper></div></div></div>
+    </body>
+</html>
