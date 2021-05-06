@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>横向时间轴</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <style type="text/css">
+        #timeline {
+            width: 500px;
+            height: 300px;
+            overflow: hidden;
+            margin: 100px auto;
+            position: relative;
+            /*background: url('img/dot.gif') left 45px repeat-x;*/
+        }
+
+        #dates {
+            width: 760px;
+            height: 60px;
+            overflow: hidden;
+        }
+
+        #dates li {
+            list-style: none;
+            float: left;
+            width: 180px;
+            height: 50px;
+            font-size: 24px;
+            text-align: center;
+            /*background: url('img/biggerdot.png') center bottom no-repeat;*/
+        }
+
+        #dates a {
+            width:180px;
+            line-height: 20px;
+            padding-bottom: 2px;
+            font-size: 15px;
+        }
+
+        #dates .selected {
+            font-size: 20px;
+            font-weight:bold;
+        }
+
+        #issues {
+            width: 760px;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        #issues li {
+            width: 760px;
+            height: 300px;
+            list-style: none;
+            float: left;
+        }
+
+        #issues li h3 {
+            color: #ffcc00;
+            font-size: 35px;
+            margin: 20px 0;
+        }
+
+        #issues li p {
+            font-size: 14px;
+            margin-right: 70px;
+            margin: 10px;
+            font-weight: normal;
+            line-height: 22px;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.timelinr-0.9.53.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $().timelinr({
+                autoPlay: 'true',
+                autoPlayDirection: 'forward',
+                startAt: 4
+            })
+        });
+    </script>
+</head>
+
+<body>
+
+<div id="main">
+    <h2 class="top_title">生活轨迹</h2>
+    <div id="timeline">
+        <ul id="dates">
+            <li><a href="#2005">20170121 22:35:41</a></li>
+            <li><a href="#2006">20170121 20:13:08</a></li>
+            <li><a href="#2007">20170121 18:26:37</a></li>
+            <li><a href="#2008">20170121 14:56:10</a></li>
+            <li><a href="#2009">20170121 13:31:27</a></li>
+            <li><a href="#2010">20170121 11:47:38</a></li>
+            <li><a href="#2011">20170121 9:01:22</a></li>
+            <li><a href="#2012">20170121 8:24:39</a></li>
+        </ul>
+        <ul id="issues">
+            <li id="2005">
+                <a href="f?p='||V('APP_ID')||':122:'||V('SESSION')||':::::"><h3>出入口系统</h3></a>
+                <p> 进入小区</p>
+            </li>
+            <li id="2006">
+                <a href="f?p='||V('APP_ID')||':122:'||V('SESSION')||':::::"><h3>出入口系统</h3></a>
+                <p> 离开小区</p>
+            </li>
+            <li id="2007">
+                <a href="f?p='||V('APP_ID')||':122:'||V('SESSION')||':::::"><h3>停车场系统</h3></a>
+                <p> 豫E763809</p>
+            </li>
+            <li id="2008">
+                <a href="f?p='||V('APP_ID')||':122:'||V('SESSION')||':::::"><h3>停车场系统</h3></a>
+                <p> 豫E763809</p>
+            </li>
+            <li id="2009">
+                <a href="f?p='||V('APP_ID')||':122:'||V('SESSION')||':::::"><h3>楼宇门禁系统</h3></a>
+                <p> 1#2-205</p>
+            </li>
+            <li id="2010">
+                <a href="f?p='||V('APP_ID')||':122:'||V('SESSION')||':::::"><h3>楼宇门禁系统</h3></a>
+                <p>1#2-205</p>
+            </li>
+            <li id="2011">
+                <a href="f?p='||V('APP_ID')||':122:'||V('SESSION')||':::::"><h3>非机动车系统</h3></a>
+                <p>车棚4号</p>
+            </li>
+            <li id="2012">
+                <a href="f?p='||V('APP_ID')||':122:'||V('SESSION')||':::::"><h3>非机动车系统</h3></a>
+                <p>车棚4号</p>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
